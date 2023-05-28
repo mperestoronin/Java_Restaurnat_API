@@ -1,7 +1,7 @@
 # Java_Restaurnat_API
 
 Ссылка на Postman:
-https://grey-resonance-934930.postman.co/workspace/New-Team-Workspace~3f29f347-8cb5-4e81-992a-96e2fb69d346/collection/27666004-97206b72-50ca-4612-aeba-94212a11b83c?action=share&creator=27666004
+<br> https://grey-resonance-934930.postman.co/workspace/New-Team-Workspace~3f29f347-8cb5-4e81-992a-96e2fb69d346/collection/27666004-97206b72-50ca-4612-aeba-94212a11b83c?action=share&creator=27666004
 <br>Также прилагаю JSON файл (см в репозитории)
 
 ### Особенности реализации:
