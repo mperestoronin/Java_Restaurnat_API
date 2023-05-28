@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "97206b72-50ca-4612-aeba-94212a11b83c",
+		"name": "Authorization testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27666004",
+		"_collection_link": "https://grey-resonance-934930.postman.co/workspace/3f29f347-8cb5-4e81-992a-96e2fb69d346/collection/27666004-97206b72-50ca-4612-aeba-94212a11b83c?action=share&creator=27666004&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/user/login?username=Georg2&password=test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/login?username=Georg2&password=test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Georg2"
+						},
+						{
+							"key": "password",
+							"value": "test"
+						}
+					]
+				},
+				"description": "Testing login. Should be executed after register"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/user/me",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHZW9yZzIiLCJpYXQiOjE2ODUyODM0MzcsImV4cCI6MTY4NTI4NTIzN30.ciK6GG4woc8undjeGVM2rtNAPQDxQVeUCxGs-mYipy5Omu1qHX-vVz7MIOfWPHKxXFoEqjig_5tCaHaW75trjg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"me"
+					]
+				},
+				"description": "get info about the user. Should be called after login with the token provided in login. Keep in mind that the token is only valid for 30 mins"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/user/register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Georg2\",\r\n    \"email\": \"georg2@gmail.com\",\r\n    \"passwordHash\": \"test\",\r\n    \"role\": \"admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				},
+				"description": "should be called first"
+			},
+			"response": []
+		}
+	]
+}
