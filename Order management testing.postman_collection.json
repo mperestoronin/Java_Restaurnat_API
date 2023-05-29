@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "cf7b133d-9284-4721-b844-71ab54bfc524",
+		"name": "Order management testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27666004",
+		"_collection_link": "https://grey-resonance-934930.postman.co/workspace/3f29f347-8cb5-4e81-992a-96e2fb69d346/collection/27666004-cf7b133d-9284-4721-b844-71ab54bfc524?action=share&creator=27666004&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/dishes/menu",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Some Dish\",\r\n  \"description\": \"This is a delicious dish\",\r\n  \"price\": 12.99,\r\n  \"quantity\": 10\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/dishes/menu",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dishes",
+						"menu"
+					]
+				},
+				"description": "Тестируем меню"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/dishes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Some Dish\",\r\n  \"description\": \"This is a delicious dish\",\r\n  \"price\": 12.99,\r\n  \"quantity\": 10\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/dishes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dishes"
+					]
+				},
+				"description": "adding a dish test"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/dishes/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/dishes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dishes",
+						"1"
+					]
+				},
+				"description": "deleting dish"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/dishes/2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/dishes/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dishes",
+						"2"
+					]
+				},
+				"description": "get dish by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/orders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"status\": \"cooking\",\r\n  \"specialRequests\": \"no salt, extra pepper\",\r\n  \"quantity\": 10\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				},
+				"description": "posting a new order"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/orders/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"1"
+					]
+				},
+				"description": "get order by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/orders/1/status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Processing",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders/1/status",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"1",
+						"status"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Processing",
+							"disabled": true
+						}
+					]
+				},
+				"description": "updating the statuys of the order"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				},
+				"description": "Просмотр всех заказов"
+			},
+			"response": []
+		}
+	]
+}
